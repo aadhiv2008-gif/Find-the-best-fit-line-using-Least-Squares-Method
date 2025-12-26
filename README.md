@@ -7,43 +7,59 @@ To implement univariate Linear Regression to fit a straight line using least squ
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Get the independent variable X and dependent variable Y.
-2. Calculate the mean of the X -values and the mean of the Y -values.
-3. Find the slope m of the line of best fit using the formula. 
-<img width="231" alt="image" src="https://user-images.githubusercontent.com/93026020/192078527-b3b5ee3e-992f-46c4-865b-3b7ce4ac54ad.png">
+
+1.Get the independent variable X and dependent variable Y.
+
+2.Calculate the mean of the X -values and the mean of the Y -values.
+
+3.Find the slope m of the line of best fit using the formula.
+
+<img width="231" height="100" alt="192078527-b3b5ee3e-992f-46c4-865b-3b7ce4ac54ad" src="https://github.com/user-attachments/assets/99f8f0e0-e78d-4bcb-bd40-44dedeaf0e79" />
+
 4. Compute the y -intercept of the line by using the formula:
-<img width="148" alt="image" src="https://user-images.githubusercontent.com/93026020/192078545-79d70b90-7e9d-4b85-9f8b-9d7548a4c5a4.png">
-5. Use the slope m and the y -intercept to form the equation of the line.
-6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
+
+<img width="148" height="40" alt="192078545-79d70b90-7e9d-4b85-9f8b-9d7548a4c5a4" src="https://github.com/user-attachments/assets/796de8c4-c957-4703-998c-dd192b6ea4f6" />
+
+5. Use the slope m and the y -intercept to form the equation of the line. 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
 Developed by:Aadhithya
 registernumber:25018761
-program to implement univeriable Linear Regerssion to fit a 
-straight line using least squared
-import numpy as np 
-import matplotlib.pyplot as plt 
-x=np.array(eval(input())) 
-y=np.array(eval(input())) 
-x_mean=np.mean(x) 
-y_mean=np.mean(y) 
-num=0 
-denom=0 
-for i in range(len(x)): 
-num+=(x[i]-x_mean)*(y[i]-y_mean) 
-denom+=(x[i]-x_mean)**2 
-m=num/denom 
-b=y_mean-m*x_mean 
-print(m,b) 
-y_predicted=m*x+b 
-print(y_predicted) 
-plt.scatter(x,y) 
-plt.plot(x,y_predicted,color='red') 
-plt.show() 
+program to implement univeriable Linear Regerssion to fit a straight line using least squared
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Prepocessing input data
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+#Mean
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
+num=0
+denom=0
+
+#to find sum of (xi-x') & (yi-y') & (xi-x')^2
+for i in range(len(X)):
+    num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+    denom+=(X[i]-X_mean)**2
+m=num/denom
+b=Y_mean-(m*X_mean)
+print(m,b)
+Y_predicted = m*X+b
+print(Y_predicted)
+plt.scatter(X,Y)
+plt.plot(X,Y_predicted,color="red")
+plt.show()
 
 
 ## Output:
-<img width="1920" height="1080" alt="Screenshot (53)" src="https://github.com/user-attachments/assets/cde666d6-e1c4-4f6b-bb43-e311f55debf9" />
+8,2,11,6,5,4,12,9,6,1
+3,10,3,6,8,12,1,4,9,14
+-1.1064189189189189 14.08108108108108
+[ 5.22972973 11.86824324  1.91047297  7.44256757  8.54898649  9.65540541
+  0.80405405  4.12331081  7.44256757 12.97466216]
+
+<img width="543" height="413" alt="375205912-4a58f9f9-ff60-4560-bd50-fcf04ac11298" src="https://github.com/user-attachments/assets/88ffa0a9-1abd-4080-bfbc-44074f5ab0fe" />
 
 
 ## Result:
